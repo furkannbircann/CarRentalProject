@@ -16,6 +16,11 @@ namespace ConsoleUI
             {
                 Console.WriteLine("{0} --- {1}",car.Id,car.Description);
             }
+
+            foreach (var detail in carManager.GetCarDetails())
+            {
+                Console.WriteLine("{0} --- {1} --- {2} --- {3}", detail.CarName, detail.BrandName,detail.ColorName,detail.DailyPrice);
+            }
         }
     }
 }
