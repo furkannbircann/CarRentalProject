@@ -12,6 +12,8 @@ namespace Business.Abstract
     {
         List<Car> GetAll();
         void Add(Car car);
+        void Delete(Car car);
+        void Update(Car car);
         Car GetCarsByBrandId(int brandId);
         Car GetCarsByColorId(int colorId);
         List<CarDetailDto> GetCarDetails();
