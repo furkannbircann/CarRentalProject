@@ -16,12 +16,12 @@ namespace DataAccess.Concrete.InMemory
 
         public InMemoryCarDal()
         {
-            _carList = new List<Car> { new Car { Id = 1, BrandId = 1, ColorId = 3, DailyPrice = 500, ModelYear = "2019", Description = "Middle Class Car" },
-            new Car { Id = 2, BrandId = 2, ColorId = 1, DailyPrice = 750, ModelYear = "2022", Description = "Luxury Car" },
-            new Car { Id = 3, BrandId = 2, ColorId = 2, DailyPrice = 250, ModelYear = "2010", Description = "Low Class Car" },
-            new Car { Id = 4, BrandId = 3, ColorId = 5, DailyPrice = 300, ModelYear = "2015", Description = "Low Class Car" },
-            new Car { Id = 5, BrandId = 1, ColorId = 4, DailyPrice = 450, ModelYear = "2018", Description = "Middle Class Car" },
-            new Car { Id = 6, BrandId = 4, ColorId = 1, DailyPrice = 150, ModelYear = "2000", Description = "Low Class Car" }};
+            _carList = new List<Car> { new Car { Id = 1, BrandId = 1, ColorId = 3, DailyPrice = 500, ModelYear = new DateTime(2019), Description = "Middle Class Car" },
+            new Car { Id = 2, BrandId = 2, ColorId = 1, DailyPrice = 750, ModelYear = new DateTime(2022), Description = "Luxury Car" },
+            new Car { Id = 3, BrandId = 2, ColorId = 2, DailyPrice = 250, ModelYear = new DateTime(2010), Description = "Low Class Car" },
+            new Car { Id = 4, BrandId = 3, ColorId = 5, DailyPrice = 300, ModelYear = new DateTime(2015), Description = "Low Class Car" },
+            new Car { Id = 5, BrandId = 1, ColorId = 4, DailyPrice = 450, ModelYear = new DateTime(2018), Description = "Middle Class Car" },
+            new Car { Id = 6, BrandId = 4, ColorId = 1, DailyPrice = 150, ModelYear = new DateTime(2000), Description = "Low Class Car" }};
         }
 
         public void Add(Car car)
