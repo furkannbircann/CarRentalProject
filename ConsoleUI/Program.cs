@@ -10,24 +10,32 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
+            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            customerManager.Add(new Customer  {UserId = 1, CompanyName = "X Technology" });
+
+            //CarGetAll();
+
+            //GetCarDetails(carManager);
+
+        }
+
+        private static void CarGetAll()
+        {
             CarManager carManager = new CarManager(new EfCarDal());
-            carManager.Add(new Car {BrandId = 1, ColorId = 12,CarName="Toros", ModelYear = new DateTime(2000), DailyPrice = 500, Description = "Middle Class Car" });
+            carManager.Add(new Car { BrandId = 1, ColorId = 12, CarName = "Honda", ModelYear = new DateTime(2000), DailyPrice = 500, Description = "Middle Class Car" });
 
             var result = carManager.GetAll();
             if (result.Success)
             {
                 foreach (var car in result.Data)
                 {
-                    Console.WriteLine("{0} --- {1}", car.Id,car.CarName);
+                    Console.WriteLine("{0} --- {1}", car.Id, car.CarName);
                 }
             }
             else
             {
                 Console.WriteLine(result.Message);
             }
-
-            //GetCarDetails(carManager);
-
         }
 
         private static void GetCarDetails(CarManager carManager)

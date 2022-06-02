@@ -1,0 +1,18 @@
+﻿using Core.Utilities.Results;
+using Entities.Concrete;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Business.Abstract
+{
+    public interface IRentalService
+    {
+        IResult Add(Rental rentalCar);
+        IResult Delete(Rental rentalCar);
+        IResult Update(Rental rentalCar);
+        IDataResult<List<Rental>> GetAll();
+    }
+}
