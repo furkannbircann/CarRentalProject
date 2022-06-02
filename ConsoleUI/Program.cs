@@ -22,7 +22,6 @@ namespace ConsoleUI
         private static void CarGetAll()
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            carManager.Add(new Car { BrandId = 1, ColorId = 12, CarName = "Honda", ModelYear = new DateTime(2000), DailyPrice = 500, Description = "Middle Class Car" });
 
             var result = carManager.GetAll();
             if (result.Success)
