@@ -3,6 +3,7 @@ using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
 using System;
+using System.IO;
 
 namespace ConsoleUI
 {
@@ -10,9 +11,6 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
-            customerManager.Add(new Customer  {UserId = 1, CompanyName = "X Technology" });
-
             //CarGetAll();
 
             //GetCarDetails(carManager);

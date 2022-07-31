@@ -8,6 +8,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
+using FluentValidation;
 
 namespace Business.Concrete
 {
@@ -19,9 +22,10 @@ namespace Business.Concrete
         {
             _userDal = userDal;
         }
-
+        [ValidationAspect(typeof(UserValidator))]
         public IResult Add(User user)
         {
+            
             _userDal.Add(user);
             return new SuccessResult(Messages.Added);
         }
