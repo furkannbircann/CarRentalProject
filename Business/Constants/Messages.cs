@@ -25,6 +25,6 @@ namespace Business.Constants
         public static string GetAll = "Listed to all data";
         public static string RentalInValid = "Rental Failed";
         public static string RentalSuccess = "Rental Success";
-
+        public static string UserAdded = "User added";
     }
 }
