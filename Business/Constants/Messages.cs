@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,5 +27,11 @@ namespace Business.Constants
         public static string RentalInValid = "Rental Failed";
         public static string RentalSuccess = "Rental Success";
         public static string UserAdded = "User added";
+        public static string UserNotFound = "User not found";
+        public static string PasswordError = "Password error";
+        public static string SuccessfulLogin = "Successful login";
+        public static string UserAlreadyExists = "User already exists";
+        public static string UserRegistered = "User registered";
+        public static string AccessTokenCreated ="Access Token Created";
     }
 }
