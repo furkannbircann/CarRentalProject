@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -33,5 +34,6 @@ namespace Business.Constants
         public static string UserAlreadyExists = "User already exists";
         public static string UserRegistered = "User registered";
         public static string AccessTokenCreated ="Access Token Created";
+        public static string AuthorizationDenied ="Authorization Denied";
     }
 }

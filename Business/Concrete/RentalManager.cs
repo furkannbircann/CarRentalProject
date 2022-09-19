@@ -20,6 +20,7 @@ namespace Business.Concrete
             _rentalDal = rentalDal;
         }
 
+        
         public IResult Add(Rental rentalCar)
         {
             var isRental = _rentalDal.GetAll(r => r.CarId == rentalCar.CarId && (r.ReturnDate == null && r.ReturnDate > DateTime.Now)).Any();
