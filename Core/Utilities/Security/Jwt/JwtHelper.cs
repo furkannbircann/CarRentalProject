@@ -20,7 +20,7 @@ namespace Core.Utilities.Security.Jwt
         private TokenOptions _tokenOptions;
         private DateTime _accessTokenExpiration;
 
-        public JwtHelper(IConfiguration configuration, TokenOptions tokenOptions)
+        public JwtHelper(IConfiguration configuration)
         {
             Configuration = configuration;
             _tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
@@ -47,7 +47,7 @@ namespace Core.Utilities.Security.Jwt
                 issuer: tokenOptions.Issuer,
                 audience: tokenOptions.Audience,
                 expires: _accessTokenExpiration,
-                notBefore: DateTime.Now,
+                notBefore: DateTime.UtcNow,
                 claims: SetClaims(user, operationClaims),
                 signingCredentials: signingCredentials
                 );
@@ -56,12 +56,12 @@ namespace Core.Utilities.Security.Jwt
 
         private IEnumerable<Claim> SetClaims(User user, List<OperationClaim> operationClaims)
         {
-            var claim = new List<Claim>();
-            claim.AddNameIdentifier(user.Id.ToString());
-            claim.AddEmail(user.Email);
-            claim.AddName($"{user.FirstName} {user.LastName}");
-            claim.AddRoles(operationClaims.Select(c => c.Name).ToArray());
-            return claim;
+            var claims = new List<Claim>();
+            claims.AddNameIdentifier(user.Id.ToString());
+            claims.AddEmail(user.Email);
+            claims.AddName($"{user.FirstName} {user.LastName}");
+            claims.AddRoles(operationClaims.Select(c => c.Name).ToArray());
+            return claims;
         }
     }
 }
