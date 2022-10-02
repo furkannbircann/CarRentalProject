@@ -19,6 +19,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Core.DependencyResolvers;
+using Core.Extensions;
+using Core.Utilities.IoC;
 
 namespace WebAPI
 {
@@ -56,6 +59,10 @@ namespace WebAPI
                 };
             });
 
+            services.AddDependencyResolvers(new ICoreModule[]
+            {
+                new CoreModule()
+            });
 
             services.AddSwaggerGen(c =>
             {
