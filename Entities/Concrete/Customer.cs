@@ -9,8 +9,8 @@ namespace Entities.Concrete
 {
     public class Customer : IEntity
     {
-        public short Id { get; set; }
-        public short UserId { get; set; }
+        public int Id { get; set; }
+        public int UserId { get; set; }
         public string CompanyName { get; set; }
     }
 }
