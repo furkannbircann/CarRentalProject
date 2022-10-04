@@ -3,6 +3,7 @@ using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Caching;
+using Core.Aspects.Autofac.Performance;
 using Core.Aspects.Autofac.Transaction;
 using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Validation;
@@ -43,6 +44,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CarDeleted);
         }
         [CacheAspect]
+        [PerformanceAspect(5)]
         public IDataResult<List<Car>> GetAll()
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(), Messages.CarListed);
